@@ -12,16 +12,16 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class MultiDBService {
-
+    @Autowired
     private CircuitBreaker circuitBreaker;
     @Autowired
     private EmpRepo1 empRepo1;
     @Autowired
     private EmpRepo2 empRepo2;
 
-    public MultiDBService(CircuitBreakerRegistry circuitBreakerRegistry) {
+    /*public MultiDBService(CircuitBreakerRegistry circuitBreakerRegistry) {
         this.circuitBreaker = circuitBreakerRegistry.circuitBreaker("abc");
-    }
+    }*/
 
     @io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker(name="abc", fallbackMethod = "fallbackMethodForDb2Data")
     public Iterable<?> getEmpData(String flag) {

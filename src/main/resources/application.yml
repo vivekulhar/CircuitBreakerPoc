@@ -14,12 +14,12 @@ db2:
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     database-platform: org.hibernate.dialect.MySQLDialect
-#csl:
-#  properties:
-#    trwWindowInSeconds: 10
-#    trwMinNoOfCalls: 5
-#    fmtErrTRWWindowInSeconds: 10
-#    fmtErrTRWMinNoOfCalls: 3
+csl:
+  properties:
+    trwWindowInSeconds: 10
+    trwMinNoOfCalls: 5
+    fmtErrTRWWindowInSeconds: 10
+    fmtErrTRWMinNoOfCalls: 3
 #resilience4j.circuitbreaker.instances.csl.registerHealthIndicator
 #  resilience4j.circuitbreaker.instances.csl.slidingWindowSize=5
 #  resilience4j.circuitbreaker.instances.csl.slidingWindowType=COUNT_BASED
@@ -35,14 +35,14 @@ db2:
 #        cancelRunningFuture: true
 
 
-resilience4j.circuitbreaker:
-  configs:
-    default:
-      registerHealthIndicator: true
-      slidingWindowSize: 50
-
-resilience4j.timelimiter:
-  configs:
-    default:
-      timeoutDuration: 5s
-      cancelRunningFuture: true
+#resilience4j.circuitbreaker:
+#  configs:
+#    default:
+#      registerHealthIndicator: true
+#      slidingWindowSize: 50
+#
+#resilience4j.timelimiter:
+#  configs:
+#    default:
+#      timeoutDuration: 5s
+#      cancelRunningFuture: true
